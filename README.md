@@ -1,54 +1,32 @@
-# Grubhub Prototype
+# Lab-3 Grubhub (MySQL + React)
 
-This a prototype of Grubhub.com built using MySQL, React.js, Express.js and Node.js.
-The prototype is built as a lab requirement for Enterprise Distributed Systems (CMPE - 273) class at San Jose State University, under professor Simon Shim.
+A multi-tier restaurant delivery system built with a focus on data relational modeling and modern React patterns.
+
+## Stack
+
+<a href="https://react.dev"><img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=000" alt="React" /></a>
+<a href="https://vite.dev"><img src="https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white" alt="Vite" /></a>
+<a href="https://expressjs.com"><img src="https://img.shields.io/badge/Express-000000?style=flat&logo=express&logoColor=white" alt="Express" /></a>
+<a href="https://www.mysql.com"><img src="https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white" alt="MySQL" /></a>
+<a href="https://www.docker.com"><img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white" alt="Docker" /></a>
+
+## Modernization
+
+- **NPM Workspaces**: Unified monorepo structure.
+- **Vite**: Modern build pipeline for the React frontend.
+- **Native ESM**: Clean ESM migration for the backend.
+- **Dockerized DB**: Simplified local setup with Docker Compose.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
 ### Prerequisites
 
-You will need Node.js installed on your machine.
+- Node.js (v20+)
+- Docker
 
-To install Node.js on Mac:
-```
-brew install nodejs
-```
+### Setup & Run
 
-To install Node.js on Linux:
-```
-brew install nodejs
-```
-
-### Installing
-
-Clone the contents of the Git repository to your local:
-```
-git clone https://github.com/savyasachi16/Grubhub-Prototype.git
-```
-
-Go into the client directory and run the following command:
-```
-npm install
-```
-Go into the server directory and run the following command:
-```
-npm install
-```
-
-To run the client, go into the client directory and run the following command:
-```
-npm start
-```
-To run the server, go into the server directory and run the following command:
-```
-npm start
-```
-
-To use the application, visit the following url from your browser:
-http://localhost:3000/
-
-## License
-
-This project is licensed under the MIT License.
+1. **DB**: `docker-compose up -d`
+2. **Install**: `npm install --legacy-peer-deps`
+3. **Backend**: `npm run start:server`
+4. **Frontend**: `npm run start:client`
