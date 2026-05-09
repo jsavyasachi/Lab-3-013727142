@@ -26,4 +26,4 @@ app.listen(8080, () => {
     console.log("GraphQL server started on port 8080");
 })
 
-module.exports = app;
+export default app;ports = app;

@@ -1,4 +1,6 @@
 import actionTypes from "../constants/index";
+import axios from "axios";
+import cookie from "js-cookie";
 import {
     toast
 } from "react-toastify";
@@ -57,47 +59,39 @@ const updateUser = payload => {
 
     }
 }
-// const updateUser = payload => {
-//     return dispatch => {
-//         return axios.put(`http://localhost:3001/userUpdate/${payload.id}`, payload)
-//             .then(response => {
-//                 if (response.status === 200) {
-//                     const userData = response.data.user;
-//                     userData.update_success = true;
-//                     dispatch({
-//                         type: actionTypes.SET_USER,
-//                         payload: userData
-//                     });
-//                     if (userData.type === "Vendor") {
-//                         const restaurantData = response.data.restaurant;
-//                         dispatch({
-//                             type: actionTypes.SET_RESTAURANT,
-//                             payload: restaurantData
-//                         });
-//                     }
-//                     toast.success("Successfully updated data!")
-//                 }
-//             })
-//     }
-// }
 
-// const getUser = payload => {
-//     return dispatch => {
-//         return axios.get(`http://localhost:3001/user/${payload.user_id}`)
-//             .then(response => {
-//                 if (response.status === 200) {
-//                     const userData = response.data;
-//                     dispatch({
-//                         type: actionTypes.SET_USER,
-//                         payload: userData
-//                     })
-//                 }
-//             })
-//     }
-// }
+const getUser = payload => {
+    return dispatch => {
+        return axios.get(`http://localhost:3001/user/${payload.user_id}`)
+            .then(response => {
+                if (response.status === 200) {
+                    const userData = response.data;
+                    dispatch({
+                        type: actionTypes.SET_USER,
+                        payload: userData
+                    })
+                }
+            })
+    }
+}
+
+const uploadProfileImage = payload => {
+    return dispatch => {
+        return axios.post(`http://localhost:3001/upload/image`, payload).then(response => {
+            if (response.status === 200) {
+                dispatch({
+                    type: actionTypes.SET_PROFILE_PIC,
+                    payload: response.data
+                })
+            }
+        })
+    }
+}
 
 export {
     registerUser,
     loginUser,
     updateUser,
+    getUser,
+    uploadProfileImage
 };

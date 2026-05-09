@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { graphql, compose } from "react-apollo";
+import { graphql } from "react-apollo";
+import { compose } from "redux";
 import { connect } from "react-redux";
 import { dishActions } from "../../js/actions/index";
 import { Container, Row, Col, Image } from "react-bootstrap";

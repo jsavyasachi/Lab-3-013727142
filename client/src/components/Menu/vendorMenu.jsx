@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { graphql, compose } from "react-apollo";
+import { graphql } from "react-apollo";
+import { compose } from "redux";
 import { connect } from "react-redux";
 import { vendorActions } from "../../js/actions/index";
 import _ from "lodash";

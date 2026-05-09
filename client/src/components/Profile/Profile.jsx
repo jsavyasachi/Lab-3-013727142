@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { graphql, compose } from "react-apollo";
+import { graphql } from "react-apollo";
+import { compose } from "redux";
 import {updateUserMutation} from "../../mutations/userMutations";
 import {getRestaurantQuery} from "../../mutations/restaurantMutations";
 import { userActions, vendorActions } from "../../js/actions/index";

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { graphql, compose } from "react-apollo";
+import { graphql } from "react-apollo";
+import { compose } from "redux";
 import { ToastContainer } from "react-toastify";
 import { userActions } from "../../js/actions/index";
 import { loginUserMutation } from "../../mutations/userMutations";
